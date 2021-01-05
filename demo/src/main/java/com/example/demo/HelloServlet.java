@@ -14,7 +14,8 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
+        // 这是郝俊平的项目
+        System.out.println();
         // Hello
         PrintWriter out = response.getWriter();
         out.println("<html><body>");
