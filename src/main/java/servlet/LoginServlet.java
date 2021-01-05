@@ -22,7 +22,7 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("error","用户名或密码不正确");
             req.getRequestDispatcher("error.jsp").forward(req,resp);
         }else {
-            resp.sendRedirect("index.jsp");
+            resp.sendRedirect("welcome.jsp");
         }
     }
 }
