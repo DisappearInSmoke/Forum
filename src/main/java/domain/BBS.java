@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class BBS {
-    private int bssId;
+    private Integer bssId;
     private String bbsName;
     private String bbsPassword;
     private LocalDate bbsBirthday;
