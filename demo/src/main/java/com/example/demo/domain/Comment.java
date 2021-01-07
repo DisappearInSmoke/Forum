@@ -9,19 +9,21 @@ public class Comment { //评论表实体
     private int PostId; //帖子编号
     private int userId; //用户编号
     private String replyContent; //回复内容
-    private LocalTime replyTime; //回复时间
+    private LocalDateTime replyTime; //回复时间
     private int commentUpOneLevelId; //评论上级编号
+    private int commentUpOneLevelCommentId; //上一级评论的编号
 
     public Comment() {
     }
 
-    public Comment(int commentId, int postId, int userId, String replyContent, LocalTime replyTime, int commentUpOneLevelId) {
+    public Comment(int commentId, int postId, int userId, String replyContent, LocalDateTime replyTime, int commentUpOneLevelId, int commentUpOneLevelCommentId) {
         CommentId = commentId;
         PostId = postId;
         this.userId = userId;
         this.replyContent = replyContent;
         this.replyTime = replyTime;
         this.commentUpOneLevelId = commentUpOneLevelId;
+        this.commentUpOneLevelCommentId = commentUpOneLevelCommentId;
     }
 
     public int getCommentId() {
@@ -56,11 +58,11 @@ public class Comment { //评论表实体
         this.replyContent = replyContent;
     }
 
-    public LocalTime getReplyTime() {
+    public LocalDateTime getReplyTime() {
         return replyTime;
     }
 
-    public void setReplyTime(LocalTime replyTime) {
+    public void setReplyTime(LocalDateTime replyTime) {
         this.replyTime = replyTime;
     }
 
@@ -72,6 +74,14 @@ public class Comment { //评论表实体
         this.commentUpOneLevelId = commentUpOneLevelId;
     }
 
+    public int getCommentUpOneLevelCommentId() {
+        return commentUpOneLevelCommentId;
+    }
+
+    public void setCommentUpOneLevelCommentId(int commentUpOneLevelCommentId) {
+        this.commentUpOneLevelCommentId = commentUpOneLevelCommentId;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
@@ -81,6 +91,7 @@ public class Comment { //评论表实体
                 ", replyContent='" + replyContent + '\'' +
                 ", replyTime=" + replyTime +
                 ", commentUpOneLevelId=" + commentUpOneLevelId +
+                ", commentUpOneLevelCommentId=" + commentUpOneLevelCommentId +
                 '}';
     }
 }
