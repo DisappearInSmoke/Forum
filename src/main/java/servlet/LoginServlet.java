@@ -10,12 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private final BBSDao bbsDao = new BBSDaoImpl();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
         String name = req.getParameter("name");
         String password = req.getParameter("password");
         String userName = bbsDao.userLogin(name,password);
@@ -27,5 +29,10 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("name",name);
             resp.sendRedirect("welcome.jsp");
         }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doPost(req, resp);
     }
 }
