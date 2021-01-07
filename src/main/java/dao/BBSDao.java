@@ -1,7 +1,10 @@
 package dao;
 
 
+import domain.BBS;
+
 public interface BBSDao {
-    String findAll(String bbsName, String bbsPassword);
-    String select(String bbsName);
+    String userLogin(String bbsName, String bbsPassword);
+    String userIdOnly(String bbsName);
+    int userInsert(BBS bbs);
 }
