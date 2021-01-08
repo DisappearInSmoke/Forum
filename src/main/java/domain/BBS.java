@@ -6,7 +6,6 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class BBS {
-    private Integer bssId;
     private String bbsName;
     private String bbsPassword;
     private LocalDate bbsBirthday;
@@ -15,20 +14,11 @@ public class BBS {
     @Override
     public String toString() {
         return "BBS{" +
-                "bssId=" + bssId +
-                ", bbsName='" + bbsName + '\'' +
+                "bbsName='" + bbsName + '\'' +
                 ", bbsPassword='" + bbsPassword + '\'' +
                 ", bbsBirthday=" + bbsBirthday +
                 ", bbsEmail='" + bbsEmail + '\'' +
                 '}';
-    }
-
-    public int getBssId() {
-        return bssId;
-    }
-
-    public void setBssId(int bssId) {
-        this.bssId = bssId;
     }
 
     public String getBbsName() {
@@ -63,8 +53,7 @@ public class BBS {
         this.bbsEmail = bbsEmail;
     }
 
-    public BBS(int bssId, String bbsName, String bbsPassword, LocalDate bbsBirthday, String bbsEmail) {
-        this.bssId = bssId;
+    public BBS(String bbsName, String bbsPassword, LocalDate bbsBirthday, String bbsEmail) {
         this.bbsName = bbsName;
         this.bbsPassword = bbsPassword;
         this.bbsBirthday = bbsBirthday;
