@@ -10,6 +10,7 @@ public class BBS {
     private String bbsPassword;
     private LocalDate bbsBirthday;
     private String bbsEmail;
+    private String bbs_cookie;
 
     @Override
     public String toString() {
@@ -18,6 +19,7 @@ public class BBS {
                 ", bbsPassword='" + bbsPassword + '\'' +
                 ", bbsBirthday=" + bbsBirthday +
                 ", bbsEmail='" + bbsEmail + '\'' +
+                ", bbs_cookie='" + bbs_cookie + '\'' +
                 '}';
     }
 
@@ -53,11 +55,20 @@ public class BBS {
         this.bbsEmail = bbsEmail;
     }
 
-    public BBS(String bbsName, String bbsPassword, LocalDate bbsBirthday, String bbsEmail) {
+    public String getBbs_cookie() {
+        return bbs_cookie;
+    }
+
+    public void setBbs_cookie(String bbs_cookie) {
+        this.bbs_cookie = bbs_cookie;
+    }
+
+    public BBS(String bbsName, String bbsPassword, LocalDate bbsBirthday, String bbsEmail, String bbs_cookie) {
         this.bbsName = bbsName;
         this.bbsPassword = bbsPassword;
         this.bbsBirthday = bbsBirthday;
         this.bbsEmail = bbsEmail;
+        this.bbs_cookie = bbs_cookie;
     }
 
     public BBS() {

@@ -25,6 +25,7 @@ public class BBSDaoImpl extends BaseDao implements BBSDao {
 
     @Override
     public String userIdOnly(String bbsName) {
+
         return null;
     }
 

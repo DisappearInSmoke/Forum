@@ -38,8 +38,9 @@
 <form action="login" method="post">
     <div id="div_first">
         <h2>XX论坛登陆</h2>
-        <p><input type="text" placeholder="用户名" name="name" class="in"/></p>
-        <p><input type="password" placeholder="密码" name="password" class="in1"/></p>
+        <p><input type="text" placeholder="用户名" name="name" class="in" id="name"/></p>
+        <p><input type="password" placeholder="密码" name="password" class="in1" id="password"/></p>
+        <input id="remeber" name="remember" type="checkbox" value="true">记住用户名和密码
         <p><input type="submit" value="登陆" id="tiJiao"/></p>
         <a href="insert.html">注册</a>
     </div>
@@ -53,6 +54,29 @@
                 $("#tiJiao").css("background-color","rgb(241,172,171)");
             }
         });
+        function getCookie(name) {
+            //传递进来一个参数，这个参数是cookie的名字
+            //得到的结果是这个cookie的值
+            const strCookie = document.cookie;
+            const arrCookie = strCookie.split("; ");
+            for (let i = 0; i < arrCookie.length; i++) {
+                let arr = arrCookie[i].split("=");
+                if (arr[0] === name) {
+                    return arr[1];
+                }
+            }
+            return "";
+        }
+
+        if (document.cookie.indexOf("name") === -1 || document.cookie.indexOf("token") === -1) {
+            //如果浏览器中没有叫做username和toke的cookie，就将两个文本框的内容清空
+            document.getElementById("name").value = "";
+            document.getElementById("password").value = "";
+        } else {
+            document.getElementById("remember").checked = true; //让复选框打上对号
+            document.getElementById("name").value = getCookie("username");
+            document.getElementById("password").value = "********";
+        }
     </script>
 </form>
 </body>
