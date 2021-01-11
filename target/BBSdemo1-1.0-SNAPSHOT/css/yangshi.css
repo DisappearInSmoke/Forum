@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+#shouYe{
+	padding-bottom: 18px;
+	background-color: rgb(66,66,66);
+	color: #FFFFFF;
+	height: 1.25rem;
+	color: rgb(183,183,183)
+}
+.shouYe{
+	font-size: 13px;
+	color: rgb(183,183,183);
+
+}
+#deng{
+	padding-left:800px;
+	padding-top: 8px;
+}
+a.shouYe:hover{
+	color: #FFFFFF;
+}
+#lunTan{
+	margin-left: 400px;
+	position: absolute;
+	top: 8px;
+	color: #FFFFFF;
+}
+.container {
+	height: 70px;
+	width: 100px;
+	padding-left: 770px;
+	padding-top: 30px;
+}
+.parent {
+	position: relative;
+}
+.search {
+	width: 300px;
+	height: 40px;
+	border-radius: 18px;
+	outline: none;
+	border: 1px solid #ccc;
+	padding-left: 20px;
+	position: absolute;
+}
+.btn {
+	height: 35px;
+	width: 35px;
+	position: absolute;
+	background: url("images/topbar.png") no-repeat -2px -99px;
+	top: 6px;
+	left: 285px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
